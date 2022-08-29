@@ -1,0 +1,220 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  font-family: Arial, Helvetica, sans-serif;
+}
+figure,
+a,
+ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+a {
+  text-decoration: none;
+}
+.loading {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%);
+  z-index: 555;
+  .loader {
+    display: flex;
+    align-items: center;
+    font-weight: bold;
+    font-size: 50px;
+    > div {
+      .dot {
+        width: 10px;
+        height: 10px;
+        border: 2px solid #000;
+        background-color: #000;
+        border-radius: 50%;
+        float: left;
+        margin: 0 5px;
+        transform: scale(0);
+        -webkit-animation: fx 1000ms ease infinite 0ms;
+        animation: fx 1000ms ease infinite 0ms;
+      }
+      .dot:nth-child(2) {
+        -webkit-animation: fx 1000ms ease infinite 300ms;
+        animation: fx 1000ms ease infinite 300ms;
+      }
+      .dot:nth-child(3) {
+        -webkit-animation: fx 1000ms ease infinite 600ms;
+        animation: fx 1000ms ease infinite 600ms;
+      }
+    }
+  }
+}
+.home {
+  display: flex;
+  .side {
+    position: fixed;
+    width: 250px;
+    left: 0;
+    height: 100vh;
+    background-color: #f5f9fb;
+    border-right: 1px solid #d7e5ee;
+    figure {
+      padding: 20px;
+      svg {
+        fill: #24598c;
+      }
+    }
+    h2 {
+      padding: 20px;
+      margin-bottom: 15px;
+    }
+    ul {
+      text-align: center;
+      li {
+        margin-bottom: 10px;
+        &.active,
+        &:hover {
+          background: #24598c;
+          a {
+            color: #fff;
+            svg {
+              path {
+                fill: #fff;
+              }
+            }
+          }
+        }
+        a {
+          padding: 10px;
+          font-size: 20px;
+          display: flex;
+          align-items: center;
+          column-gap: 15px;
+          transition: all 0.3s ease-in-out;
+          svg {
+            path {
+              fill: #24598c;
+              transition: all 0.3s ease-in-out;
+            }
+          }
+        }
+      }
+    }
+  }
+  .side-nav {
+    width: 250px;
+    min-height: 100vh;
+  }
+
+  .content {
+    width: calc(100% - 500px);
+    padding: 30px 15px;
+  }
+  .empty-section {
+    width: 250px;
+  }
+  .tabs {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+    h2 {
+      color: #0d2229;
+    }
+    ul {
+      display: flex;
+      align-items: center;
+      column-gap: 15px;
+      li {
+        cursor: pointer;
+        color: rgba(136, 136, 136, 0.584);
+        &.active {
+          color: #24598c;
+        }
+      }
+    }
+  }
+  .post-list {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    > div {
+      width: 48%;
+    }
+    .posts {
+      width: 48%;
+    }
+  }
+  .single-post {
+    max-width: 500px;
+    margin-bottom: 50px;
+    .single-img img {
+      width: 100%;
+      min-width: 250px;
+      max-height: 350px;
+      border-radius: 20px;
+      height: 100%;
+      padding: 2px;
+      border: 2px solid #d7e5ee;
+    }
+    .single-control {
+      display: flex;
+      align-items: center;
+      margin-top: 20px;
+      justify-content: space-between;
+      figure {
+        display: flex;
+        align-items: center;
+        column-gap: 5px;
+        img {
+          border-radius: 50%;
+          width: 40px;
+          height: 40px;
+        }
+      }
+      ul {
+        display: flex;
+        align-items: center;
+        column-gap: 15px;
+        li {
+          display: flex;
+          align-items: center;
+          column-gap: 5px;
+          svg,
+          img {
+            width: 30px;
+            height: 30px;
+          }
+          svg {
+            path {
+              fill: #24598c;
+            }
+          }
+        }
+      }
+    }
+    figure {
+      margin: 0;
+      display: flex;
+    }
+  }
+}
+
+@-webkit-keyframes fx {
+  50% {
+    transform: scale(1);
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+@keyframes fx {
+  50% {
+    transform: scale(1);
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}

@@ -1,0 +1,25 @@
+<div *ngIf="isLoading" class="loading">
+  <section class="loader">
+    <span>loading</span>
+    <div>
+      <div class="dot"></div>
+      <div class="dot"></div>
+      <div class="dot"></div>
+    </div>
+  </section>
+</div>
+
+<div *ngIf="!isLoading" class="tabs">
+  <h2>Feeds </h2>
+  <ul>
+    <li (click)="filterBy('All')" class="active">All</li>
+    <li (click)="filterBy('Following')">Following</li>
+    <li (click)="filterBy('Newest')">Newest</li>
+    <li (click)="filterBy('Pouplar')">Pouplar</li>
+  </ul>
+</div>
+
+<div class="post-list">
+  <app-singlepost class="posts" *ngFor="let post of posts" [postData]="post">
+  </app-singlepost>
+</div>
