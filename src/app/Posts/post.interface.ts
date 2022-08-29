@@ -1,5 +1,6 @@
 export interface Post {
   userName: string,
   numOfLikes:number,
-  img:string
+  img: string,
+  category:string
 }
