@@ -32,16 +32,13 @@ this.postsSubscription= this.postsService.getPosts().pipe(map(res=>res.splice(0,
        break;
       case "Following":
         this.postsList =this.posts.filter((post) => post.category == "follwing");
-        console.log("aliiiiiii",this.postsList)
          break;
       case "Newest":
         this.postsList = this.posts.filter((post) => post.category == "newest");
-        console.log("aliiiiiii",this.postsList)
-        
+
          break;
       case "Pouplar":
         this.postsList = this.posts.filter((post) => post.category == "popular");
-        console.log("aliiiiiii",this.postsList)
         break;
       default:
         this.posts;
